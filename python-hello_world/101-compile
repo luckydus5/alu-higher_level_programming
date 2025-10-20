@@ -1,5 +1,6 @@
-#!/bin/bash
-# Compile a Python file
+#!/usr/bin/env bash
+# 101-compile: Compiles a Python script into $PYFILEc
 
+echo "Compiling $PYFILE ..."
 python3 -m py_compile "$PYFILE"
-mv "__pycache__/${PYFILE}c" "$PYFILEc" 2>/dev/null || true
+mv "__pycache__/${PYFILE%.*}.cpython-$(python3 -c 'import sys; print(sys.version_info[0]*10+sys.version_info[1])').pyc" "${PYFILE}c"
