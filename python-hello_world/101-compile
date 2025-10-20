@@ -1,0 +1,5 @@
+#!/bin/bash
+# Compile a Python file
+
+python3 -m py_compile "$PYFILE"
+mv "__pycache__/${PYFILE}c" "$PYFILEc" 2>/dev/null || true
