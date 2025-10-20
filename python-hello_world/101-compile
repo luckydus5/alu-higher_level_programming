@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # 101-compile: Compiles a Python script into $PYFILEc
 
 echo "Compiling $PYFILE ..."
