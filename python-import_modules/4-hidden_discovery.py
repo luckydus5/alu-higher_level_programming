@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # 4-hidden_discovery.py
 # A script that prints all names defined in the compiled module hidden_4.pyc,
 # excluding names that start with "__".
