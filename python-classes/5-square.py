@@ -1,21 +1,17 @@
 #!/usr/bin/python3
-"""Defines a class Square with a private size attribute, getter, setter, and area method."""
+"""Defines a class Square with size, getter/setter, area, and print method."""
 
 
 class Square:
-    """Represents a square with a private size attribute and area calculation."""
+    """Represents a square with a private size attribute."""
 
     def __init__(self, size=0):
         """Initialize a new Square.
 
         Args:
             size (int, optional): Size of the square. Defaults to 0.
-
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
         """
-        self.size = size  # Uses the setter for validation
+        self.size = size  # Uses setter for validation
 
     @property
     def size(self):
@@ -43,3 +39,10 @@ class Square:
         """Return the area of the square."""
         return self.__size ** 2
 
+    def my_print(self):
+        """Print the square using the character '#'."""
+        if self.__size == 0:
+            print()
+            return
+        for _ in range(self.__size):
+            print("#" * self.__size)
