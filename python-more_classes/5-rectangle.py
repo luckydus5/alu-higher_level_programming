@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-"""Defines a class Rectangle that defines a rectangle by width and height."""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """Represents a rectangle."""
+    """Defines a rectangle by width and height."""
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle instance.
-
-        Args:
-            width (int): The width of the rectangle (default is 0).
-            height (int): The height of the rectangle (default is 0).
-        """
+        """Initialize a new Rectangle."""
         self.width = width
         self.height = height
 
@@ -48,34 +43,21 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return the perimeter of the rectangle.
-
-        If either width or height is 0, the perimeter is 0.
-        """
+        """Return the perimeter of the rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the printable representation of the rectangle using '#'.
-
-        Returns:
-            str: Rectangle represented by '#' characters,
-            or an empty string if width or height is 0.
-        """
+        """Return a string representation of the rectangle with #."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        rectangle = ""
-        for _ in range(self.__height):
-            rectangle += "#" * self.__width
-            if _ != self.__height - 1:
-                rectangle += "\n"
-        return rectangle
+        return "\n".join(["#" * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
-        """Return a string representation to recreate the rectangle using eval()."""
+        """Return a string that can recreate the instance."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Print a message when an instance of Rectangle is deleted."""
+        """Print a message when a rectangle is deleted."""
         print("Bye rectangle...")
